@@ -1,0 +1,48 @@
+public class Pair {
+
+    private final Object key;
+    private final Object value;
+
+    public Pair(Object key, Object value) {
+        this.key = key;
+        this.value = value;
+    }
+
+    public Object getKey() {
+        return key;
+    }
+
+    public Object getValue() {
+        return value;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Pair two = (Pair) obj;
+        if ((this.key.equals(two.key)) && (this.value.equals(two.value))) {
+            return true;
+        }
+        return false;
+    }
+
+    public String toString() {
+        return key.toString() + " " + value.toString();
+    }
+
+    public static void main(String[] args) {
+
+        int key = 5;
+        int value = 2;
+
+        Pair test = new Pair(key, value);
+        Pair one = new Pair(1, 2);
+        Pair two = new Pair(1, 2);
+        Pair three = new Pair(3, 4);
+        System.out.println(test.toString());
+
+        System.out.println(one.equals(two));
+        System.out.println(one.equals(three));
+
+    }
+
+}
