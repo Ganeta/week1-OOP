@@ -1,0 +1,13 @@
+public interface StackImplement {
+
+    public int pop();
+
+    public void push(int j);
+
+    public int peek();
+
+    public boolean isEmpty();
+
+    public boolean isFull();
+
+}
