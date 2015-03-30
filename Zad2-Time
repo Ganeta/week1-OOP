@@ -1,0 +1,81 @@
+import java.util.Date;
+
+public class Time {
+
+    private int hour;
+    private int minute;
+    private int second;
+    private int day;
+    private int month;
+    private int year;
+
+    public Time(int h, int m, int s, int d, int mon, int y) {
+
+        setHour(h);
+        setMin(m);
+        setSecond(s);
+        setDay(d);
+        setMon(mon);
+        setYear(y);
+
+    }
+
+    public Time() {
+        // TODO Auto-generated constructor stub
+    }
+
+    public void setHour(int h) {
+        hour = ((h >= 0 && h < 24) ? h : 0);
+    }
+
+    public void setMin(int m) {
+        minute = ((m >= 0 && m < 60) ? m : 0);
+    }
+
+    public void setSecond(int s) {
+        second = ((s >= 0 && s < 60) ? s : 0);
+    }
+
+    public void setDay(int d) {
+
+        day = ((d >= 1 && d <= 31) ? d : 0);
+    }
+
+    public void setMon(int mon) {
+        month = ((mon <= 12 && mon >= 1) ? mon : 0);
+    }
+
+    public void setYear(int y) {
+        year = ((y <= 2015) ? y : 0);
+    }
+
+    public void TimeNow() {
+
+        Date d = new Date();
+        System.out.println(d);
+
+        System.out.printf("%1$s %2$tB %2$td, %2$tY", "Current date is:", d);
+
+    }
+
+    public String toString() {
+        return String.format("Time and Date are: %d:%d:%d  %d.%d.%d\n", hour, minute, second, day, month, year);
+    }
+
+    public static void main(String[] args) {
+
+        int hourTest = 15;
+        int minuteTest = 10;
+        int secondTest = 5;
+        int dayTest = 28;
+        int monthTest = 3;
+        int yearTest = 2015;
+
+        Time test = new Time(hourTest, minuteTest, secondTest, dayTest, monthTest, yearTest);
+
+        System.out.println(test.toString());
+        test.TimeNow();
+
+    }
+
+}
