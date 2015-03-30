@@ -1,0 +1,61 @@
+public class StackImpl implements StackImplement{
+
+    private int size;
+    private int top;
+    private int[] elements;
+
+    public StackImpl(int sizeS, int topS, int[] elementsS) {
+        size = sizeS;
+        top = topS;
+        elements = elementsS;
+
+    }
+
+    public StackImpl() {
+
+    }
+
+    public int pop() {
+        if (top == -1)
+            System.out.println("Stack is emplty");
+
+        return elements[top--];
+    }
+
+    public void push(int j) {
+        elements[++top] = j;
+    }
+
+    public int peek() {
+        return elements[top];
+    }
+
+    public boolean isEmpty() {
+        return (top == -1);
+    }
+
+    public boolean isFull() {
+        return (top == size - 1);
+    }
+
+    public static void main(String[] args) {
+
+        int sizeTest = 10;
+        int topTest = -1;
+        int arrayTest[] = { 1, 2, 3, 3, 4, 5 };
+
+        StackImpl stackTest = new StackImpl(sizeTest, topTest, arrayTest);
+
+        for (int i = 1; i < arrayTest.length; i++) {
+
+            stackTest.push(i);
+        }
+
+        while (!stackTest.isEmpty()) {
+
+            System.out.print(stackTest.pop());
+
+        }
+
+    }
+}
