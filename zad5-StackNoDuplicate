@@ -22,7 +22,7 @@ public class StackNoDuplicate implements StackImplement {
 
         for (int i = 0; i <= top; i++) {
             if (j == elements[i]) {
-                System.out.println("This element alreeady exists!");
+                System.out.println("This element already exists");
                 return;
             }
         }
